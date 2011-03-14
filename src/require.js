@@ -26,7 +26,7 @@ var require = function(s, callback){
             newScript.onreadystatechange = function() {
                 if (newScript.readyState === 'loaded' || newScript.readyState === 'complete') {
                     newScript.onreadystatechange = null;
-                    if (callback&&i===t) {
+                    if (callback) {
                         callback();
                     }
                 }
@@ -34,7 +34,7 @@ var require = function(s, callback){
         
             // others
             newScript.onload = function() {
-                if (callback&&i===t) {
+                if (callback) {
                     callback();
                 }
             }
