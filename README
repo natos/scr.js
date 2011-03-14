@@ -1,0 +1,23 @@
+<h1>Require.js<h1>
+<h3>Little tiny loader (4k) for javascript sources.</h3>
+
+<p>Really easy to use:</p>
+<ol>
+    <li>Add require.js source to your web document.
+    <li>Tell require.js the url of the javascript resource you want to load,
+    <li>or an array of resources.
+    <li>Define a optional callback to execute when the source is loaded,
+    <li>That's all ;)
+</ol>
+
+Example:
+
+<script>
+
+    require("http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js", function() {
+
+        $("#demo").html("jQuery Loaded from CDN");
+
+    });
+
+</script>
