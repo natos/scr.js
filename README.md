@@ -12,12 +12,8 @@ Really easy to use
 
 Example "Using Require.js"
 --------------------------
-<script>
+require("http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js", function() {
 
-    require("http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js", function() {
+    $("#demo").html("jQuery Loaded from CDN");
 
-        $("#demo").html("jQuery Loaded from CDN");
-
-    });
-
-</script>
+});
