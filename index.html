@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame 
+       Remove this if you use the .htaccess -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+  <title>index</title>
+  
+</head>
+
+<body>
+    
+    <h1>Require.js</h1>
+
+    <div id="demo"></div>
+
+    <script src="src/require.js"></script>
+
+    <script>
+
+    require("http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js", function() {
+        $("#demo").append("<p>jQuery Loaded from Google CDN.</p>");
+    });
+    
+    require("http://ajax.googleapis.com/ajax/libs/dojo/1.5/dojo/dojo.xd.js", function() {
+        $("#demo").append("<p>Dojo Toolkit Loaded from Google CDN.</p>");
+    });
+       
+    require("https://ajax.googleapis.com/ajax/libs/mootools/1.3.1/mootools-yui-compressed.js", function() {
+        $("#demo").append("<p>Mootools Loaded from Google CDN.</p>");
+    });
+    
+    var plugins = ["http://plugins.jquery.com/files/jquery.magicScroller.v1.js_0.txt",
+                   "http://jquery-jsonp.googlecode.com/files/jquery.jsonp-2.1.4.min.js",
+                   "http://htmldrive.net/items/download_start/199"];
+                   
+    require(plugins,function(){ 
+        $("#demo").append("<p>Some jQuery plugins loaded.</p>");
+     });
+
+</script>
+</body>
+</html>
