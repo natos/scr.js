@@ -17,15 +17,15 @@
 
     <div id="demo"></div>
 
-    <script src="src/require.js"></script>
+    <script src="src/scr.pt.js"></script>
 
     <script>
 
-    require("http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js", function() {
+    scr.pt.("http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js", function() {
         $("#demo").append("<p>jQuery Loaded from Google CDN.</p>");
     });
     
-    require("http://ajax.googleapis.com/ajax/libs/dojo/1.5/dojo/dojo.xd.js", function() {
+    scr.pt.("http://ajax.googleapis.com/ajax/libs/dojo/1.5/dojo/dojo.xd.js", function() {
         $("#demo").append("<p>Dojo Toolkit Loaded from Google CDN.</p>");
     });
        
@@ -37,7 +37,7 @@
                    "http://jquery-jsonp.googlecode.com/files/jquery.jsonp-2.1.4.min.js",
                    "http://htmldrive.net/items/download_start/199"];
                    
-    require(plugins,function(){ 
+    scr.pt.(plugins,function(){ 
         $("#demo").append("<p>Some jQuery plugins loaded.</p>");
      });
 

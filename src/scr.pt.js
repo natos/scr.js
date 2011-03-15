@@ -1,13 +1,13 @@
 /*
- *      Require.js
+ *      Scr.pt.js
  *      Little tiny loader for javascript sources.
- *      0.1 - March 14 2011
+ *      0.1.1 - March 14 2011
  * 
- *      require("http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js", function() {
+ *      scr.pt("http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js", function() {
  *          $("#demo").html("jQuery Loaded from CDN");
  *      });
  */
-var require = function(s, callback){
+var scr={pt: function(s, callback) {
     
     if (typeof s === "string") {
         s = [s]; // force array type
@@ -45,4 +45,4 @@ var require = function(s, callback){
         
 
     }
-}
+}}
