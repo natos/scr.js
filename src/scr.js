@@ -23,7 +23,7 @@ var scr = window.scr = (function() {
                 // Grab the script tag element on the document
                 var script = d.getElementsByTagName("script")[0];
                 // Loader buffer
-                var b = { t: 0, i: 0, r: function() { return b.t === b.i } };
+                var b = { t: s.length, i: 0, r: function() { return b.t === b.i; } };
                 // Callback function
                 var callback = function() {  
                     // increment script loaded
@@ -31,8 +31,8 @@ var scr = window.scr = (function() {
         
                     if (c&&b.r()) {
                         c();
-                    } 
-                }
+                    }
+                };
                 // Ready function
                 var ready = (function() { 
                     // Feature detection for IE
@@ -43,21 +43,19 @@ var scr = window.scr = (function() {
                                     n.onreadystatechange = null;
                                         callback();
                                 }
-                            }
-          
-                        }
+                            };
+                        };
                     // For others
                     } else {
                         return function(n) {
                             n.onload = function() {
                                 callback();
-                            }
-                        }
+                            };
+                        };
                     }
                     
-                })();
+                }());
                                    
-                var t = b.t = s.length;
                 var i = 0;
                 var e = d.createElement("script");
 
@@ -70,10 +68,10 @@ var scr = window.scr = (function() {
                     n.src = s[i];
                     script.parentNode.insertBefore(n,script);
                     
-                }   
+                }
             }
-        }
+        };
         
-    })();
+    }());
 
-})(document);
+}(document));
