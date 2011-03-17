@@ -18,26 +18,15 @@
     <script src="src/scr.js"></script>
 
     <script>
-
-    scr.js.("http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js", function() {
-        $("#demo").append("<p>jQuery Loaded from Google CDN.</p>");
-    });
-    
-    scr.js.("http://ajax.googleapis.com/ajax/libs/dojo/1.5/dojo/dojo.xd.js", function() {
-        $("#demo").append("<p>Dojo Toolkit Loaded from Google CDN.</p>");
-    });
-       
-    scr.js.("https://ajax.googleapis.com/ajax/libs/mootools/1.3.1/mootools-yui-compressed.js", function() {
-        $("#demo").append("<p>Mootools Loaded from Google CDN.</p>");
-    });
-    
+    var demoHandler = function() { $("#demo").append(".") };
     var plugins = ["http://plugins.jquery.com/files/jquery.magicScroller.v1.js_0.txt",
                    "http://jquery-jsonp.googlecode.com/files/jquery.jsonp-2.1.4.min.js",
                    "http://htmldrive.net/items/download_start/199"];
-                   
-    scr.js.(plugins,function(){ 
-        $("#demo").append("<p>Some jQuery plugins loaded.</p>");
-     });
+    
+    scr.js("http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js", demoHandler);
+    scr.js("http://ajax.googleapis.com/ajax/libs/dojo/1.5/dojo/dojo.xd.js", demoHandler);   
+    scr.js("https://ajax.googleapis.com/ajax/libs/mootools/1.3.1/mootools-yui-compressed.js", demoHandler);             
+    scr.js(plugins, demoHandler);
 
     </script>
 
