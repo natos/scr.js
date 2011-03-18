@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+  <title>scr.js</title>
+  <link href="http://code.jquery.com/qunit/git/qunit.css" rel="stylesheet" type="text/css" media="screen"/>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script src="http://code.jquery.com/qunit/git/qunit.js"></script>
+  <script src="../src/scr.js"></script>
+</head>
+<body>
+    
+    <h1>scr.js</h1>
+
+    <div id="demo"></div>
+
+    <!-- QUnit -->
+    <h1 id="qunit-header">QUnit example</h1>
+    <h2 id="qunit-banner"></h2>
+    <div id="qunit-testrunner-toolbar"></div>
+    <h2 id="qunit-userAgent"></h2>
+    <ol id="qunit-tests"></ol>
+    <div id="qunit-fixture">test markup, will be hidden</div>
+    <!-- End QUnit -->
+
+<script>
+
+// We will need jQuery
+scr.js("http://code.jquery.com/jquery-latest.js", function() {
+    
+    module("Get a simple script");
+    
+    asyncTest("Get dojo library from google CDN", function() {
+        
+        scr.js("http://ajax.googleapis.com/ajax/libs/dojo/1.5/dojo/dojo.xd.js", function() {
+                ok( true ,"A simple way to optimize page load, looking good!");
+                start();
+            });
+            
+    });
+
+    asyncTest("Get Mootols library from google CDN", function() {
+        
+        scr.js("https://ajax.googleapis.com/ajax/libs/mootools/1.3.1/mootools-yui-compressed.js", function() {
+                ok( true ,"We also got Mootools!!!");
+                start();
+            });
+            
+    });
+
+    module("Get a collection of them");
+
+    asyncTest("Get some jQuery plugins from from diferents domains", function() {    
+
+        var plugins = ["http://plugins.jquery.com/files/jquery.magicScroller.v1.js_0.txt",
+                       "http://jquery-jsonp.googlecode.com/files/jquery.jsonp-2.1.4.min.js"];
+
+        scr.js(plugins, function(){
+            ok( true ,"Multiple request with one callback is working fine baby ;)");
+            start();
+        });
+        
+    });
+});
+</script>
+</body>
+</html>
