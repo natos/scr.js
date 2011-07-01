@@ -16,10 +16,10 @@
     
     <div id="demo"></div>
 
-    <script src="src/scr.min.js"></script>
+    <script src="src/scr.js"></script>
 
     <script>
-    var demoHandler = function() { $("#demo").append(".") };
+    var demoHandler = function(a) { $("#demo").append("."); };
     var plugins = ["http://plugins.jquery.com/files/jquery.magicScroller.v1.js_0.txt",
                    "http://jquery-jsonp.googlecode.com/files/jquery.jsonp-2.1.4.min.js",
                    "http://htmldrive.net/items/download_start/199"];
@@ -28,6 +28,9 @@
     scr.js("http://ajax.googleapis.com/ajax/libs/dojo/1.5/dojo/dojo.xd.js", demoHandler);   
     scr.js("https://ajax.googleapis.com/ajax/libs/mootools/1.3.1/mootools-yui-compressed.js", demoHandler);             
     scr.js(plugins, demoHandler);
+    
+    var sources = ["http://static.localhost.gz:8080/search-javascript/MLA/jquery,jquery.cookie,mclics,menu,imgxd,search,modal,chicoui,dejavu,autosuggest_MLA,menuProvi,pmsArrays,pms?version=0.1.36","http://static.localhost.gz:8080/search-javascript/MLA/jquery,jquery.cookie}?version=0.1.36"];
+    scr.js(sources, demoHandler); 
 
     </script>
 
