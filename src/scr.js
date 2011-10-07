@@ -1,4 +1,4 @@
-/*
+/**
  *      scr.js 0B
  *      Little tiny loader for javascript sources.
  *      0.1.3 - March 17 2011
@@ -16,7 +16,7 @@
 
         js: function (s, c) {
 
-            if (typeof s === "string") {
+            if (typeof s === "string") {
                 s = [s]; // force array type
             }
             
@@ -31,7 +31,7 @@
                 i: 0 
             };
             
-            b.r = function () { 
+            b.r = function () { 
                 return b.t === b.i; 
             };
             
@@ -46,7 +46,7 @@
             // Ready function
             ready = (function () {
                 // Feature detection for IE
-                if (script.readyState) {
+                if (script.readyState) {
                     return function (n) {
                         n.onreadystatechange = function () {
                             if (n.readyState === 'loaded' || n.readyState === 'complete') {

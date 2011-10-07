@@ -18,3 +18,13 @@ Example "Using scr.js"
         $("#demo").html("jQuery Loaded from CDN");
 
     });
+
+Example "Multiple sources"
+--------------------------
+    
+    scr.js(["http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js",
+			"http://code.jquery.com/jquery.min.js"], function() {
+
+        $("#demo").html("jQuery & jQuery UI Loaded from CDN");
+
+    });
