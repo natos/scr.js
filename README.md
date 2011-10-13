@@ -28,3 +28,22 @@ Example "Multiple sources"
         $("#demo").html("jQuery & jQuery UI Loaded from CDN");
 
     });
+
+Example "Dependencies"
+----------------------
+
+	scr.js(['/js/socket.io.js']);
+	scr.js(['/js/jquery.js'],
+		function() { 
+			scr.js(['/js/chico.js'
+	,				'/js/autosuggest.js'
+	,				'/js/ph.js'],
+				function(){
+					scr.js(['/js/ph/overview.js'
+	,						'/js/ph/manage.js'
+	,						'/js/ph/find.js'],
+						function(){
+							ph.initialize();
+						});
+				});
+		});
