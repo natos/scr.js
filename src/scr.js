@@ -1,7 +1,7 @@
 /**
  *      scr.js 0B
  *      Little tiny loader for javascript sources.
- *      0.1.3 - March 17 2011
+ *      0.1.4 - 14/10/2011
  * 
  *      scr.js("http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js", function() {
  *          $("#demo").html("jQuery Loaded from Google CDN");
@@ -25,12 +25,12 @@
             // Grab the script tag element on the document
             script = d.getElementsByTagName("script")[0];
             
-            // Loader buffer
+            // Buffer
             b = { 
                 t: s.length, 
                 i: 0 
             };
-            
+            // Buffer ready
             b.r = function () { 
                 return b.t === b.i; 
             };
@@ -39,10 +39,10 @@
             callback = function () {
                 // increment script loaded
                 b.i += 1;
-                if (c && b.r()) {
-                    c();
-                }
+				// Check if is ready to excecute callback
+                if (c && b.r()) { c() }
             };
+
             // Ready function
             ready = (function () {
                 // Feature detection for IE
@@ -55,7 +55,7 @@
                             }
                         };
                     };
-                // For others
+                // For standar browsers
                 } else {
                     return function (n) {
                         n.onload = function () {
@@ -66,15 +66,16 @@
             
             }());
 
+			// Iteration
             i = 0; e = d.createElement("script");
 
             // For each source
             for (i; i < b.t; i += 1) {
                 // define the load event to append the new script tag to the document
-                n = e.cloneNode(true);
-                ready(n);
+                n = e.cloneNode(true); ready(n);
                 // define the source of new script tag element
                 n.src = s[i];
+				// apend to DOM
                 script.parentNode.insertBefore(n, script);
 
             }
